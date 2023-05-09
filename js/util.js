@@ -8,4 +8,8 @@ function isBelowMaxStringLength(string, maxLength) {
   return string.length <= maxLength;
 }
 
-export {getRandomFromInterval, isBelowMaxStringLength};
+function isDescriptionValid(value) {
+  return value.length >= 20 && value.length <= 140;
+}
+
+export {getRandomFromInterval, isBelowMaxStringLength, isDescriptionValid};
