@@ -1,3 +1,3 @@
-import {generateImgDescriptionArray} from './data.js';
-// eslint-disable-next-line no-console
-console.log(generateImgDescriptionArray());
+import { generateImgDescriptionArray } from './data.js';
+import { renderMiniatures } from './renderMiniatures.js';
+renderMiniatures(generateImgDescriptionArray());
