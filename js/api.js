@@ -5,12 +5,12 @@ function getData (onSuccess, onFail) {
     .then((response) => {
       if(response.ok) {
         return response.json();
-      } else {
-        onFail();
       }
-    })
-    .then((result) => onSuccess(result))
-    .catch(() => onFail());
+      throw new Error(`${response.status} ${response.statusText}`);
+    }).then((result) => onSuccess(result))
+    .catch(() => {
+      onFail();
+    });
 }
 
 function postData (body, onSuccess, onFail, onFinal) {
