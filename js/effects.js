@@ -15,7 +15,9 @@ function generateEventListener(button) {
   const newEffect = `effects__preview--${button.value}`;
   const eventListener = function() {
     image.classList.remove(currentEffect);
-    image.classList.add(newEffect);
+    if (button.value !== 'none') {
+      image.classList.add(newEffect);
+    }
     currentEffect = newEffect;
   };
   return eventListener;
